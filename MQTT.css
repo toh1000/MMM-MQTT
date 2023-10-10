@@ -9,3 +9,7 @@
 td {
     padding-right: 5px;
 }
+
+MMM-mqtt .value { 
+	font-size: 250%; line-height: 100px;
+}

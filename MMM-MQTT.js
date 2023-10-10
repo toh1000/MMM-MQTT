@@ -54,6 +54,7 @@ Module.register("MMM-MQTT", {
       jsonpointer: sub.jsonpointer,
       suffix: typeof sub.suffix == "undefined" ? "" : sub.suffix,
       value: "",
+      valueClass: sub.valueClass,
       time: Date.now(),
       maxAgeSeconds: sub.maxAgeSeconds,
       sortOrder: sub.sortOrder || 10, // TODO: Fix sort order i * 100 + j
@@ -231,8 +232,15 @@ Module.register("MMM-MQTT", {
         var valueWrapper = doc.createElement("td");
         var setValueinnerHTML = convertValue(sub);
         valueWrapper.innerHTML = setValueinnerHTML;
+	if (sub.valueClass === "")
+	{
         valueWrapper.className =
           "align-right medium mqtt-value " + (tooOld ? "dimmed" : "bright");
+	}
+	else
+	{
+	valueWrapper.className = "align-right "+sub.valueClass+" mqtt-value " + (tooOld ? "dimmed" : "bright");
+	}
         valueWrapper.style.color = tooOld
           ? valueWrapper.style.color
           : colors.value;
