@@ -13,3 +13,10 @@ td {
 MMM-mqtt .value { 
 	font-size: 250%; line-height: 100px;
 }
+
+.suffix_top {
+	width: 0px;
+	padding-right: 0px;
+	padding-top: 3px;
+	vertical-align: top;
+}
