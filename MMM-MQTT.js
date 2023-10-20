@@ -53,6 +53,7 @@ Module.register("MMM-MQTT", {
       decimalSignInMessage: sub.decimalSignInMessage,
       jsonpointer: sub.jsonpointer,
       suffix: typeof sub.suffix == "undefined" ? "" : sub.suffix,
+      suffixClass: typeof sub.suffixClass == "undefined" ? "" : sub.suffixClass,
       value: "",
       valueClass: sub.valueClass,
       time: Date.now(),
@@ -249,7 +250,7 @@ Module.register("MMM-MQTT", {
         // Suffix
         var suffixWrapper = doc.createElement("td");
         suffixWrapper.innerHTML = sub.suffix;
-        suffixWrapper.className = "align-left mqtt-suffix";
+        suffixWrapper.className = "align-left mqtt-suffix "+sub.suffixClass;
         subWrapper.appendChild(suffixWrapper);
         subWrapper.style.color = colors.suffix;
         if (setValueinnerHTML !== "#DISABLED#") wrapper.appendChild(subWrapper);
